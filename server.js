@@ -87,7 +87,7 @@ io.on("connection", (socket) => {
     const percent = Math.round((socket.uploadFile.chunksReceived / socket.uploadFile.totalChunks) * 100);
     socket.emit("upload-progress", { fileName: socket.uploadFile.fileName, percent });
 
-    // console.log(`📦 Chunk ${socket.uploadFile.chunksReceived}/${socket.uploadFile.totalChunks} (${percent}%)`);
+     console.log(`📦 Chunk ${socket.uploadFile.chunksReceived}/${socket.uploadFile.totalChunks} (${percent}%)`);
 
     // Complete upload automatically
     if (socket.uploadFile.chunksReceived === socket.uploadFile.totalChunks) {
